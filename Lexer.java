@@ -36,12 +36,12 @@ public class Lexer {
                 // Default case for other characters
                 default:
                     // If the character is a letter or digit, create a CHAR token
-                    if (Character.isLetterOrDigit(current)) {
+//                    if (Character.isLetterOrDigit(current)) {
                         return new Token(TokenType.CHAR, String.valueOf(current));
-                    } else {
+//                    } else {
                         // Throw an exception if the character is invalid
-                        throw new IllegalArgumentException("Invalid character: " + current);
-                    }
+//                        throw new IllegalArgumentException("Invalid character: " + current);
+//                    }
             }
         }
         // Return an EOF token when the end of the regex string is reached
