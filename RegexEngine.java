@@ -24,6 +24,7 @@ public class RegexEngine {
             // Process each input string
             while (scanner.hasNextLine()) {
                 String input = scanner.nextLine();
+                System.out.println(input);
                 boolean match = enfa.matches(input);
 
                 if (verbose) {
