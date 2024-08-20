@@ -20,6 +20,7 @@ public class Lexer {
             // Move to the next position
             position++;
 
+
             // Switch statement to determine the type of the current character
             switch (current) {
                 case '(':

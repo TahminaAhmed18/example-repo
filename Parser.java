@@ -44,7 +44,7 @@ public class Parser {
     }
 
     private ENFA base() {
-        if (currentToken.getType() == TokenType.CHAR) {
+        if (currentToken.getType() == TokenType.CHAR ) {
             char c = currentToken.getValue().charAt(0);
             currentToken = lexer.nextToken();
             return ENFA.character(c);
@@ -56,6 +56,10 @@ public class Parser {
             }
             currentToken = lexer.nextToken();
             return expr;
+        } else if (currentToken.getType() == TokenType.STAR) {
+            char c = currentToken.getValue().charAt(0);
+            currentToken = lexer.nextToken();
+            return ENFA.kleeneStar(ENFA.character(c));
         }
         throw new IllegalArgumentException("Unexpected token: " + currentToken.getValue());
     }
